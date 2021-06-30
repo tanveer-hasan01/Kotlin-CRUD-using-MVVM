@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-  android:background="@color/white"
+
+  android:background="#00BCD4"
     tools:context=".MainActivity">
 
 
     <EditText
         android:paddingLeft="16sp"
-        android:background="#E6D2FF"
+        android:background="#FFFFFF"
         android:id="@+id/et_phone"
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -25,22 +26,40 @@
         app:layout_constraintVertical_bias="0.339" />
 
     <EditText
+        android:id="@+id/et_name"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:id="@+id/et_password"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
         android:paddingLeft="16sp"
-        android:background="#E6D2FF"
-        android:layout_marginTop="16dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.212" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
+        android:background="#FFFFFF"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        android:paddingLeft="16sp"
 
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_phone" />
 
     <Button
-        android:background="@color/purple_500"
+        android:background="#2196F3"
         android:id="@+id/bt_login"
         android:layout_width="250dp"
         android:layout_height="50dp"
@@ -49,4 +68,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_password" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
