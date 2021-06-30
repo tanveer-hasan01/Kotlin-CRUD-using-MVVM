@@ -25,25 +25,22 @@ class MainActivity : AppCompatActivity() {
 
         binding.btLogin.setOnClickListener(View.OnClickListener {
 
+            when {
+                binding.etPhone.text.toString().isEmpty() -> {
+                    binding.etPhone.error="Phone required"
 
-       var phone = binding.etPhone.text.toString();
-       var password = binding.etPassword.text.toString();
+                }
+                binding.etPassword.text.toString().isEmpty() -> {
+                    binding.etPassword.error="Password required"
+                }
+                else -> {
 
-            if (binding.etPhone.text.toString().isEmpty())
-            {
-                binding.etPhone.error="Phone required"
-
-            }else if (binding.etPassword.text.toString().isEmpty())
-            {
-                binding.etPassword.error="Password required"
-            }else{
-
-                val intent = Intent(this,Home::class.java);
-                intent.putExtra("name", binding.etName.text.toString())
-                startActivity(intent);
+                    val intent = Intent(this, Home::class.java);
+                    intent.putExtra("name", binding.etName.text.toString())
+                    startActivity(intent);
 
 
-
+                }
             }
 
 

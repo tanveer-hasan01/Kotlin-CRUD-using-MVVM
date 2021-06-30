@@ -16,6 +16,7 @@ class Home : AppCompatActivity() {
         setContentView(view)
 
         actionBar?.title="Home"
+        binding.name.text=intent.getStringExtra("name").toString()
 
 
 
