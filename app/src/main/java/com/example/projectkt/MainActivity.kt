@@ -35,8 +35,8 @@ class MainActivity : AppCompatActivity() {
                 }
                 else -> {
 
-                    val intent = Intent(this, Home::class.java);
-                    intent.putExtra("name", binding.etName.text.toString())
+                    val intent = Intent(this, ListActivity::class.java);
+                   // intent.putExtra("name", binding.etName.text.toString())
                     startActivity(intent);
 
 

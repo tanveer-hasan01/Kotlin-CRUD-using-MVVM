@@ -14,9 +14,10 @@ class RetroInstance {
 
 
         fun getRetroInstance(): Retrofit {
+
             val logging = HttpLoggingInterceptor()
-            logging.level=(HttpLoggingInterceptor.Level.BODY)
-            val client=OkHttpClient.Builder()
+            logging.level = (HttpLoggingInterceptor.Level.BODY)
+            val client = OkHttpClient.Builder()
             client.addInterceptor(logging)
 
             return Retrofit.Builder()
@@ -24,8 +25,6 @@ class RetroInstance {
                 .client(client.build())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
-
-
         }
 
 

@@ -7,17 +7,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.projectkt.ModelData.User
 import com.example.projectkt.R
 import kotlinx.android.synthetic.main.item_recycler_view.view.*
-import okhttp3.internal.immutableListOf
+
 
 class UserAdapter:RecyclerView.Adapter<UserAdapter.MyViewHolder>() {
 
-    var userList= immutableListOf<User>()
+    var userList= mutableListOf<User>()
 
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserAdapter.MyViewHolder {
         val inflater =LayoutInflater.from(parent.context).inflate(R.layout.item_recycler_view,parent,false)
-
         return MyViewHolder(inflater)
     }
 
@@ -27,13 +26,14 @@ class UserAdapter:RecyclerView.Adapter<UserAdapter.MyViewHolder>() {
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
+        holder.bind(userList[position])
 
 
 
     }
 
     class MyViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        val textViewName = view.textViewName
+        val textViewName = view.tt_name
         val textViewStatus = view.tt_status
         val textViewGender = view.tt_gender
 
