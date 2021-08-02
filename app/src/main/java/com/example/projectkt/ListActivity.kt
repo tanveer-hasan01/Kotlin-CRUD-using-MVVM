@@ -38,7 +38,7 @@ class ListActivity : AppCompatActivity() {
             if(!TextUtils.isEmpty(et_search.text.toString())) {
                 viewModel.searchUser(et_search.text.toString())
             } else {
-                viewModel.getUserList()
+                viewModel.getUsersList()
             }
         }
     }
@@ -61,7 +61,6 @@ class ListActivity : AppCompatActivity() {
 
         viewModel.getUserListObserveable().observe(this, Observer<ModelUser> {
 
-
             if (it==null)
             {
                 Toast.makeText(this,"No result found !",Toast.LENGTH_LONG).show()
@@ -71,16 +70,14 @@ class ListActivity : AppCompatActivity() {
                 Useradapter.notifyDataSetChanged()
 
             }
-
-            viewModel.getUserList()
-
         })
+        viewModel.getUsersList()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
         if(requestCode == 1000) {
-            viewModel.getUserList()
+            viewModel.getUsersList()
         }
         super.onActivityResult(requestCode, resultCode, data)
     }

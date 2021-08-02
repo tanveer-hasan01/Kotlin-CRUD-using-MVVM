@@ -1,5 +1,6 @@
 package com.example.projectkt.ViewModel
 
+import android.media.midi.MidiOutputPort
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.projectkt.ModelData.ModelUser
@@ -25,27 +26,22 @@ class ListViewModel:ViewModel() {
         return recyclerListData
     }
 
-    fun getUserList(){
+    fun getUsersList() {
 
-       val retroInstance=RetroInstance.getRetroInstance().create(RetroService::class.java)
-
-        val  call=retroInstance.getUsersList()
+        val retroInstance = RetroInstance.getRetroInstance().create(RetroService::class.java)
+        val call = retroInstance.getUsersList()
         call.enqueue(object : Callback<ModelUser>{
-            override fun onResponse(call: Call<ModelUser>, response: Response<ModelUser>) {
-
-                if (response.isSuccessful){
-                    recyclerListData.postValue(response.body())
-                }
-                else{
-                    recyclerListData.postValue(null)
-                }
-            }
-
             override fun onFailure(call: Call<ModelUser>, t: Throwable) {
                 recyclerListData.postValue(null)
             }
 
-
+            override fun onResponse(call: Call<ModelUser>, response: Response<ModelUser>) {
+                if(response.isSuccessful) {
+                    recyclerListData.postValue(response.body())
+                } else {
+                    recyclerListData.postValue(null)
+                }
+            }
         })
     }
 

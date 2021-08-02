@@ -38,9 +38,9 @@ class UserAdapter:RecyclerView.Adapter<UserAdapter.MyViewHolder>() {
         val textViewGender = view.tt_gender
 
         fun bind(data : User) {
-            textViewName.text = data.name
-            textViewGender.text = data.gender
-            textViewStatus.text = data.status
+            textViewName.text = "  "+data.name
+            textViewGender.text = "  "+data.gender
+            textViewStatus.text = "  "+data.status
         }
     }
 
