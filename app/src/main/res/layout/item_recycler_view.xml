@@ -7,55 +7,90 @@
     app:cardElevation="10dp"
     app:cardCornerRadius="7dp"
     app:cardBackgroundColor="@color/white"
-    android:layout_margin="3dp"
-    android:layout_height="130dp">
+    android:layout_marginTop="3dp"
+    android:layout_marginLeft="6dp"
+    android:layout_marginRight="6dp"
+    android:layout_height="133dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:gravity="center"
-            android:drawableLeft="@drawable/ic_female"
-            android:textSize="16sp"
-            android:textColor="@android:color/black"
             android:id="@+id/tt_gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
+
+            android:layout_marginStart="12dp"
+            android:gravity="center"
             android:text="gender"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tt_status" />
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/im_gender"
+            app:layout_constraintStart_toEndOf="@+id/im_gender"
+            app:layout_constraintTop_toTopOf="@+id/im_gender"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:textStyle="bold"
-            android:gravity="center"
-            android:drawableLeft="@drawable/ic_person"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
             android:id="@+id/tt_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+
+            android:layout_marginStart="12dp"
+            android:gravity="center"
             android:text="Name"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/im_person"
+            app:layout_constraintStart_toEndOf="@+id/im_person"
+            app:layout_constraintTop_toTopOf="@+id/im_person"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:gravity="center"
-            android:drawableLeft="@drawable/ic_active"
-            android:textSize="16sp"
-            android:textColor="@android:color/black"
             android:id="@+id/tt_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+
+            android:layout_marginStart="12dp"
+            android:gravity="center"
             android:text="Status"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/im_status"
+            app:layout_constraintStart_toEndOf="@+id/im_status"
+            app:layout_constraintTop_toTopOf="@+id/im_status"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/im_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tt_name" />
+            app:layout_constraintTop_toBottomOf="@+id/im_person"
+            app:srcCompat="@drawable/ic_active" />
+
+        <ImageView
+            android:id="@+id/im_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_person" />
+
+        <ImageView
+            android:id="@+id/im_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/im_status"
+            app:srcCompat="@drawable/ic_male" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
