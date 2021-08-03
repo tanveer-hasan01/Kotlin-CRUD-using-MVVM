@@ -30,11 +30,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         title="Add User"
-
-
         initViewModel()
         createUserObservable()
         initSpinner()
+
+
 
         binding.btSave.setOnClickListener(View.OnClickListener {
 
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 
             }
 
-            else if (!binding.radioFemale.isChecked||!binding.radioMale.isChecked){
+            else if (!binding.radioFemale.isChecked && !binding.radioMale.isChecked){
 
                 Toast.makeText(this,"Please select gender!",Toast.LENGTH_LONG).show()
             }
@@ -83,8 +83,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun initSpinner()
-    {
+    fun initSpinner() {
         val languages = resources.getStringArray(R.array.status)
 
         // access the spinner
@@ -110,7 +109,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     private fun createUser(){
 
 
@@ -120,8 +118,6 @@ class MainActivity : AppCompatActivity() {
         viewModel.createUser(userData)
 
     }
-
-
 
     private fun initViewModel(){
 
@@ -137,7 +133,7 @@ class MainActivity : AppCompatActivity() {
             if (it==null)
             {
 
-                Toast.makeText(this, "Dummy API insertion now unavailable", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Successful but dummy API insertion now unavailable !", Toast.LENGTH_LONG).show()
             }else{
 
                 Toast.makeText(this, "Successfully created/updated user", Toast.LENGTH_LONG).show()
@@ -145,17 +141,6 @@ class MainActivity : AppCompatActivity() {
 
 
         })
-
-
-
-
-
-
-
-
-
-
-
 
     }
 

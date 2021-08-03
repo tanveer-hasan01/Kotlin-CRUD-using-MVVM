@@ -14,6 +14,11 @@
         android:theme="@style/Theme.ProjectKT">
         <activity
             android:name=".ListActivity">
+
+
+        </activity>
+        <activity
+            android:name=".Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +26,6 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".Home" />
         <activity android:name=".MainActivity">
 
         </activity>
