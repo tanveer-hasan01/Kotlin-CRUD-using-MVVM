@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -12,23 +13,36 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.projectkt.Adapter.UserAdapter
 import com.example.projectkt.ModelData.ModelUser
 import com.example.projectkt.ViewModel.ListViewModel
+import com.example.projectkt.databinding.ActivityListBinding
+import com.example.projectkt.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_list.*
 
 class ListActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityListBinding
     lateinit var Useradapter: UserAdapter
     lateinit var viewModel:ListViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_list)
+        binding = ActivityListBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-      //  Toast.makeText(this,"fdsdf",Toast.LENGTH_LONG).show()
+
+        binding.btAdd.setOnClickListener(View.OnClickListener {
+
+            val intent = Intent(this, MainActivity::class.java);
+            startActivity(intent);
+
+        })
 
 
         initRecyclerView()
         initViewModel()
         searchUser()
+
+
     }
 
 

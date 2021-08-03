@@ -19,6 +19,7 @@
 
         <androidx.cardview.widget.CardView
             app:cardElevation="7dp"
+            app:cardCornerRadius="10dp"
             app:cardBackgroundColor="@color/white"
             android:layout_marginTop="40dp"
             android:layout_width="300dp"
@@ -34,12 +35,12 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_name"
-                    android:background="@color/white"
+                    android:background="@drawable/et_shape"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="-4dp"
                     android:layout_marginRight="-4dp"
-                    android:hint="name *"
+                    android:hint="name "
                     android:inputType="textPersonName"
                     android:maxLength="256"
                     android:maxLines="1"
@@ -53,6 +54,7 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             app:cardElevation="7dp"
+            app:cardCornerRadius="10dp"
             app:cardBackgroundColor="@color/white"
             android:layout_marginTop="32dp"
             android:layout_width="300dp"
@@ -68,12 +70,12 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_phone"
-                    android:background="@color/white"
+                    android:background="@drawable/et_shape"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="-4dp"
                     android:layout_marginRight="-4dp"
-                    android:hint="Phone *"
+                    android:hint="Email "
                     android:inputType="textPersonName"
                     android:maxLength="256"
                     android:maxLines="1"
@@ -85,75 +87,46 @@
 
 
         </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            app:cardElevation="7dp"
-            app:cardBackgroundColor="@color/white"
-            android:layout_marginTop="32dp"
-            android:layout_width="300dp"
-            android:layout_height="55dp">
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
+        <RadioGroup
 
-                android:background="@color/white"
-                android:layout_height="wrap_content"
-                app:endIconMode="clear_text">
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_address"
-                    android:background="@color/white"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="-4dp"
-                    android:layout_marginRight="-4dp"
-                    android:hint="Address *"
-                    android:inputType="textPersonName"
-                    android:maxLength="256"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:textColor="@color/black"
-                    />
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:text="Gender :"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-            </com.google.android.material.textfield.TextInputLayout>
+            <RadioButton
+                android:drawableRight="@drawable/ic_male"
+                android:layout_marginLeft="16dp"
+                android:text="Male  "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton
+                android:drawableRight="@drawable/ic_female"
+                android:layout_marginLeft="8dp"
+                android:text="Female  "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RadioGroup>
 
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            app:cardElevation="7dp"
+
+        <Spinner
+            android:id="@+id/spinner_status"
             android:layout_marginBottom="16dp"
-            app:cardBackgroundColor="@color/white"
-            android:layout_marginTop="32dp"
-            android:layout_width="300dp"
-            android:layout_height="55dp">
+            android:layout_marginTop="24dp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"/>
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                app:endIconMode="password_toggle"
-                android:background="@color/white"
-                android:layout_height="wrap_content"
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_password"
-                    android:background="@color/white"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="-4dp"
-                    android:layout_marginRight="-4dp"
-                    android:hint="Password *"
-                    android:inputType="textPersonName"
-                    android:maxLength="256"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:textColor="@color/black"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-        </androidx.cardview.widget.CardView>
 
 
 

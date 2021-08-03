@@ -75,20 +75,4 @@ class UserAdapter:RecyclerView.Adapter<UserAdapter.MyViewHolder>() {
 
         }
     }
-
-
-   /* class MyViewHolder(view: View):RecyclerView.ViewHolder(view){
-
-        val textViewName = view.textViewName
-
-        fun bind(data : User)
-        {
-
-        }
-
-    }*/
-
-
-
-
 }
