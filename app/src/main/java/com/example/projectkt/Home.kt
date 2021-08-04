@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
 import com.example.projectkt.databinding.ActivityHomeBinding
-import com.example.projectkt.databinding.ActivityMainBinding
+
 
 class Home : AppCompatActivity() {
 

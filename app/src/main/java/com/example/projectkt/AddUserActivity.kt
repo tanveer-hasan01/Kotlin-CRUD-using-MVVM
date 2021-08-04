@@ -14,18 +14,19 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.projectkt.ModelData.User
 import com.example.projectkt.ModelData.UserResponse
 import com.example.projectkt.ViewModel.CreateViewModel
-import com.example.projectkt.databinding.ActivityMainBinding
+import com.example.projectkt.databinding.ActivityAddUserBinding
+
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class AddUserActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityAddUserBinding
     lateinit var viewModel: CreateViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityAddUserBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 

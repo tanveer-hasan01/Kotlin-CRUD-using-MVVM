@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
-import android.widget.AdapterView
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -18,13 +17,9 @@ import com.example.projectkt.ModelData.User
 import com.example.projectkt.ModelData.UserResponse
 import com.example.projectkt.ViewModel.ListViewModel
 import com.example.projectkt.databinding.ActivityListBinding
-import com.example.projectkt.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_list.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
-class ListActivity : AppCompatActivity(), UserAdapter.OnItemLongClickListener {
+class ListActivity : AppCompatActivity(), UserAdapter.OnItemLongClickListener{
 
     private lateinit var binding: ActivityListBinding
     lateinit var Useradapter: UserAdapter
@@ -39,7 +34,7 @@ class ListActivity : AppCompatActivity(), UserAdapter.OnItemLongClickListener {
 
         binding.btAdd.setOnClickListener(View.OnClickListener {
 
-            val intent = Intent(this, MainActivity::class.java);
+            val intent = Intent(this, AddUserActivity::class.java);
             startActivity(intent);
 
         })
@@ -63,7 +58,6 @@ class ListActivity : AppCompatActivity(), UserAdapter.OnItemLongClickListener {
             } else {
 
                 Toast.makeText(this, "Successfully deleted user...", Toast.LENGTH_LONG).show()
-
 
 
             }
@@ -135,6 +129,7 @@ class ListActivity : AppCompatActivity(), UserAdapter.OnItemLongClickListener {
 
         builder.setPositiveButton("Delete") { dialog, which ->
             deleteUser(user.id)
+
 
         }
 
