@@ -59,7 +59,6 @@ class ListActivity : AppCompatActivity(), UserAdapter.OnItemLongClickListener{
 
                 Toast.makeText(this, "Successfully deleted user...", Toast.LENGTH_LONG).show()
 
-
             }
         })
         viewModel.deleteUser(user_id)
