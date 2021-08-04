@@ -1,22 +1,19 @@
 package com.example.projectkt
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [SplashFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SplashFragment : Fragment() {
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +25,27 @@ class SplashFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+
+        Handler().postDelayed({
+            if (onBoardingFinished()) {
+
+                val intent = Intent(getActivity(), ListActivity::class.java)
+                startActivity(intent)
+                activity?.finish()
+
+            } else {
+                findNavController().navigate(R.id.action_splashFragment2_to_viewPagerFragment)
+            }
+        }, 2000)
+
+
         return inflater.inflate(R.layout.fragment_splash, container, false)
+    }
+
+    private fun onBoardingFinished(): Boolean {
+        val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+        return sharedPref.getBoolean("Finished", false)
     }
 
 

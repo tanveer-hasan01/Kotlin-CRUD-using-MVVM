@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.projectkt.R
+import com.example.projectkt.onBoarding.screens.Lastscreen
+
 import com.example.projectkt.onBoarding.screens.firstFragment
 import com.example.projectkt.onBoarding.screens.secoundFragment
 import kotlinx.android.synthetic.main.fragment_view_pager.view.*
@@ -29,7 +31,8 @@ class ViewPagerFragment : Fragment() {
 
         val fragmentList = arrayListOf<Fragment>(
             firstFragment(),
-            secoundFragment()
+            secoundFragment(),
+            Lastscreen()
         )
 
 
