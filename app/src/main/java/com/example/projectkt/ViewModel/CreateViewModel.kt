@@ -20,10 +20,13 @@ class CreateViewModel: ViewModel() {
         createViewModelLiveData=MutableLiveData()
     }
 
-    fun getCreateNewUserObservable():MutableLiveData<UserResponse?>{
 
+
+    fun getCreateNewUserObservable():MutableLiveData<UserResponse?>{
         return createViewModelLiveData
     }
+
+
 
   fun  createUser(user: User){
 

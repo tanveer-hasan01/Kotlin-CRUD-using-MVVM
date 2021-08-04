@@ -1,19 +1,29 @@
 package com.example.projectkt.Adapter
 
+import android.app.AlertDialog
+import android.content.Context
+import android.content.DialogInterface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.ListFragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectkt.ModelData.User
+import com.example.projectkt.ModelData.UserResponse
 import com.example.projectkt.R
+import com.example.projectkt.ViewModel.CreateViewModel
 import kotlinx.android.synthetic.main.item_recycler_view.view.*
+import java.util.Observer
 import kotlin.coroutines.coroutineContext
 
 
-class UserAdapter:RecyclerView.Adapter<UserAdapter.MyViewHolder>() {
+class UserAdapter(val clickLister:OnItemLongClickListener):RecyclerView.Adapter<UserAdapter.MyViewHolder>() {
 
-    var userList= mutableListOf<User>()
+    var userList= ArrayList<User>()
 
 
 
@@ -26,11 +36,24 @@ class UserAdapter:RecyclerView.Adapter<UserAdapter.MyViewHolder>() {
         return userList.size
     }
 
+
+
+
+
+
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
         holder.bind(userList[position])
 
 
+        holder.itemView.setOnLongClickListener{
+
+
+            userList.remove(userList.get(position))
+            notifyDataSetChanged()
+            clickLister.onItemEditCLick(userList[position])
+            return@setOnLongClickListener true
+        }
 
     }
 
@@ -40,7 +63,6 @@ class UserAdapter:RecyclerView.Adapter<UserAdapter.MyViewHolder>() {
         val textViewGender = view.tt_gender
         val imStatus=view.im_status
         val imgender=view.im_gender
-
 
 
         fun bind(data : User) {
@@ -75,4 +97,12 @@ class UserAdapter:RecyclerView.Adapter<UserAdapter.MyViewHolder>() {
 
         }
     }
+
+    interface OnItemLongClickListener {
+        fun onItemEditCLick(user : User)
+
+    }
+
+
+
 }
