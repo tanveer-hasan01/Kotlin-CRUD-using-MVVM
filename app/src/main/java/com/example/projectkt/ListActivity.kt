@@ -5,8 +5,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import androidx.annotation.StringRes
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -17,9 +21,12 @@ import com.example.projectkt.ModelData.User
 import com.example.projectkt.ModelData.UserResponse
 import com.example.projectkt.ViewModel.ListViewModel
 import com.example.projectkt.databinding.ActivityListBinding
+import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_list.*
 
 class ListActivity : AppCompatActivity(), UserAdapter.OnItemLongClickListener{
+
+    lateinit var toogle: ActionBarDrawerToggle
 
     private lateinit var binding: ActivityListBinding
     lateinit var Useradapter: UserAdapter
@@ -30,6 +37,15 @@ class ListActivity : AppCompatActivity(), UserAdapter.OnItemLongClickListener{
         binding = ActivityListBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+
+        val drawerLayout:DrawerLayout=findViewById(R.id.drawer_layout)
+        val nevView:NavigationView=findViewById(R.id.nev_view)
+        toogle= ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close)
+        drawerLayout.addDrawerListener(toogle)
+        toogle.syncState()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
 
         binding.btAdd.setOnClickListener(View.OnClickListener {
@@ -45,6 +61,17 @@ class ListActivity : AppCompatActivity(), UserAdapter.OnItemLongClickListener{
         searchUser()
 
 
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if (toogle.onOptionsItemSelected(item))
+        {
+            return true
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
 
