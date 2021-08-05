@@ -46,6 +46,19 @@ class ListActivity : AppCompatActivity(), UserAdapter.OnItemLongClickListener{
         toogle.syncState()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        nevView.setNavigationItemSelectedListener {
+            when (it.itemId){
+
+                R.id.nevHome ->Toast.makeText(this,"Home Clicked",Toast.LENGTH_LONG).show()
+                R.id.nevmessage ->Toast.makeText(this,"Message Clicked",Toast.LENGTH_LONG).show()
+                R.id.nev_setting ->Toast.makeText(this,"Setting Clicked",Toast.LENGTH_LONG).show()
+                R.id.nev_sync ->Toast.makeText(this,"Sync Clicked",Toast.LENGTH_LONG).show()
+                R.id.share ->Toast.makeText(this,"Share Clicked",Toast.LENGTH_LONG).show()
+            }
+
+            true
+        }
+
 
 
         binding.btAdd.setOnClickListener(View.OnClickListener {
@@ -54,7 +67,6 @@ class ListActivity : AppCompatActivity(), UserAdapter.OnItemLongClickListener{
             startActivity(intent);
 
         })
-
 
         initRecyclerView()
         initViewModel()

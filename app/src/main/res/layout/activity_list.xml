@@ -84,8 +84,8 @@
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
-
         android:id="@+id/nev_view"
+        app:headerLayout="@layout/nev_header"
         app:menu="@menu/nev_menu"
         android:fitsSystemWindows="true"
         android:layout_gravity="start"
