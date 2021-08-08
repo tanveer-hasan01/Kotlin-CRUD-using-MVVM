@@ -1,4 +1,17 @@
 package com.example.projectkt.room
 
-class UserRepository() {
+import androidx.lifecycle.LiveData
+
+
+class UserRepository(private val userDao: UserDao)
+{
+    val readAllData: LiveData<List<UsersModel>> = userDao.readAll()
+  suspend fun addUser(user:UsersModel){
+
+      userDao.addUser(user)
+
+   }
+
+
+
 }
