@@ -21,6 +21,7 @@ import com.example.projectkt.ModelData.User
 import com.example.projectkt.ModelData.UserResponse
 import com.example.projectkt.ViewModel.ListViewModel
 import com.example.projectkt.databinding.ActivityListBinding
+import com.example.projectkt.room_ui.ListUsers
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_list.*
 
@@ -53,7 +54,7 @@ class ListActivity : AppCompatActivity(), UserAdapter.OnItemLongClickListener{
 
                 R.id.nev_room ->{
 
-                    val intent = Intent(this, AddUserActivity::class.java);
+                    val intent = Intent(this, ListUsers::class.java);
                     startActivity(intent);
                 }
 
