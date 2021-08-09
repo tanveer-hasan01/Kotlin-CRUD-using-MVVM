@@ -13,6 +13,12 @@
         />
 
     <item
+        android:id="@+id/nev_room"
+        android:icon="@drawable/ic_db"
+        android:title="Room DB"
+        />
+
+    <item
         android:id="@+id/nevmessage"
         android:icon="@drawable/ic_text"
         android:title="Messages"

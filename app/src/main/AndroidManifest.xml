@@ -12,16 +12,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectKT"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UpdateActivity"></activity>
-        <activity android:name=".ListActivity"></activity>
-        <activity android:name=".Home">
+        <activity
+            android:name=".room_ui.ListUsers"
+            android:exported="true" />
+        <activity
+            android:name=".room_ui.AddActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddUserActivity"></activity>
+        <activity android:name=".UpdateActivity" />
+        <activity android:name=".ListActivity" />
+        <activity android:name=".Home">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name=".AddUserActivity" />
     </application>
 
 </manifest>

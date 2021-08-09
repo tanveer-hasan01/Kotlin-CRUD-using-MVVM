@@ -49,7 +49,15 @@ class ListActivity : AppCompatActivity(), UserAdapter.OnItemLongClickListener{
         nevView.setNavigationItemSelectedListener {
             when (it.itemId){
 
-                R.id.nevHome ->Toast.makeText(this,"Home Clicked",Toast.LENGTH_LONG).show()
+                R.id.nevHome ->Toast.makeText(this,"Message Clicked",Toast.LENGTH_LONG).show()
+
+                R.id.nev_room ->{
+
+                    val intent = Intent(this, AddUserActivity::class.java);
+                    startActivity(intent);
+                }
+
+
                 R.id.nevmessage ->Toast.makeText(this,"Message Clicked",Toast.LENGTH_LONG).show()
                 R.id.nev_setting ->Toast.makeText(this,"Setting Clicked",Toast.LENGTH_LONG).show()
                 R.id.nev_sync ->Toast.makeText(this,"Sync Clicked",Toast.LENGTH_LONG).show()
