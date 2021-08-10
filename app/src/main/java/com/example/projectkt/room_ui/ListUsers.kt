@@ -25,6 +25,8 @@ class ListUsers : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        title= "Offline DB"
+
         val adapter = RoomAdapter()
         binding.userRecycler.adapter=adapter
         binding.userRecycler.layoutManager=LinearLayoutManager(this)
