@@ -6,10 +6,16 @@ class UserRepository(private val userDao: UserDao) {
 
     val readAllData: LiveData<List<UsersModel>> = userDao.readAllData()
 
-   suspend fun addUser(usersModel: UsersModel){
+    fun addUser(usersModel: UsersModel){
 
        userDao.addUser(usersModel)
 
     }
+
+
+    fun updateUser(usersModel: UsersModel){
+        userDao.updateUser(usersModel)
+    }
+
 
 }

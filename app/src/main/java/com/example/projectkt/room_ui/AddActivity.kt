@@ -1,5 +1,6 @@
 package com.example.projectkt.room_ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -21,29 +22,53 @@ class AddActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        title = "Offline DB"
+
+        if (intent.getStringExtra("first_name") == null) {
+
+
+        } else {
+            binding.firstName.setText(intent.getStringExtra("first_name"))
+            binding.lastName.setText(intent.getStringExtra("last_name"))
+            binding.age.setText(intent.getStringExtra("age"))
+            binding.add.text = "Update"
+        }
+
+
 
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
         binding.add.setOnClickListener {
 
-           insetDataBase()
+            if (intent.getStringExtra("first_name") == null)
+            {
+                insetDataBase()
+            }else{
+
+                updateUser()
+            }
+
 
         }
 
     }
 
-    private fun insetDataBase(){
+    private fun insetDataBase() {
 
-        val firstName=binding.firstName.text.toString()
-        val lastName=binding.lastName.text.toString()
-        val age=binding.age.text.toString()
+        val firstName = binding.firstName.text.toString()
+        val lastName = binding.lastName.text.toString()
+        val age = binding.age.text.toString()
 
-        if (inputCheck(firstName, lastName, age)){
+        if (inputCheck(firstName, lastName, age)) {
 
             val user = UsersModel(0, firstName, lastName, Integer.parseInt(age.toString()))
-           mUserViewModel.addUser(user)
+            mUserViewModel.addUser(user)
             Toast.makeText(this, "Successfully added!", Toast.LENGTH_LONG).show()
-        }else{
+            val intent = Intent(this, ListUsers::class.java);
+            startActivity(intent);
+
+
+        } else {
 
             Toast.makeText(this, "Please fill out all fields.", Toast.LENGTH_LONG).show()
 
@@ -51,9 +76,31 @@ class AddActivity : AppCompatActivity() {
 
     }
 
-    private fun inputCheck(firstName:String,lastName: String, age: String):Boolean{
+    private fun inputCheck(firstName: String, lastName: String, age: String): Boolean {
 
-      return !(TextUtils.isEmpty(firstName) && TextUtils.isEmpty(lastName) && age.isEmpty())
+        return !(TextUtils.isEmpty(firstName) && TextUtils.isEmpty(lastName) && age.isEmpty())
+    }
+
+    private fun updateUser() {
+
+        val firstName = binding.firstName.text.toString()
+        val lastName = binding.lastName.text.toString()
+        val age = binding.age.text.toString()
+        val id = intent.getStringExtra("id").toInt()
+
+        if (inputCheck(firstName, lastName, age)) {
+
+            val updateUser = UsersModel(id, firstName, lastName, age.toInt())
+            mUserViewModel.updateUser(updateUser)
+            Toast.makeText(this, "Update Successful", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, ListUsers::class.java);
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Fill out all fields", Toast.LENGTH_LONG).show()
+
+        }
+
+
     }
 
 

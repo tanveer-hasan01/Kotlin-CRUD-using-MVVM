@@ -1,10 +1,14 @@
 package com.example.projectkt.room
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectkt.R
+import com.example.projectkt.UpdateActivity
+import com.example.projectkt.room_ui.AddActivity
 import kotlinx.android.synthetic.main.item_user.view.*
 
 class RoomAdapter: RecyclerView.Adapter<RoomAdapter.MyHolder>() {
@@ -25,6 +29,21 @@ class RoomAdapter: RecyclerView.Adapter<RoomAdapter.MyHolder>() {
         holder.itemView.first_name.text=currentItem.firstName.toString()
         holder.itemView.last_name.text=currentItem.last_name.toString()
         holder.itemView.age.text=currentItem.age.toString()
+
+        holder.itemView.setOnClickListener {
+
+
+            val intent = Intent(it.context, AddActivity::class.java)
+            intent.putExtra("first_name", currentItem.firstName)
+            intent.putExtra("last_name", currentItem.last_name)
+            intent.putExtra("age", currentItem.age.toString())
+            intent.putExtra("id", currentItem.id.toString())
+
+
+            it.context.startActivity(intent)
+
+
+        }
 
 
     }
