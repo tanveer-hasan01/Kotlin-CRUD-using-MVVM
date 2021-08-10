@@ -26,9 +26,14 @@ class RoomAdapter: RecyclerView.Adapter<RoomAdapter.MyHolder>() {
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
         val  currentItem= userList[position]
-        holder.itemView.first_name.text=currentItem.firstName.toString()
-        holder.itemView.last_name.text=currentItem.last_name.toString()
-        holder.itemView.age.text=currentItem.age.toString()
+
+        val getFirstName =currentItem.firstName
+        val getLastName =currentItem.last_name
+        val age =currentItem.age.toString()
+
+        holder.itemView.first_name.text= "First name : $getFirstName"
+        holder.itemView.last_name.text="Last : $getLastName"
+        holder.itemView.age.text="Age : $age"
 
         holder.itemView.setOnClickListener {
 
