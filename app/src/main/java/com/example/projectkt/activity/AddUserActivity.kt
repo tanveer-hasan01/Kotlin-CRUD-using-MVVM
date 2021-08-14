@@ -1,22 +1,16 @@
-package com.example.projectkt
+package com.example.projectkt.activity
 
-import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
 import com.example.projectkt.ModelData.User
-import com.example.projectkt.ModelData.UserResponse
+import com.example.projectkt.R
 import com.example.projectkt.ViewModel.CreateViewModel
 import com.example.projectkt.databinding.ActivityAddUserBinding
-
-import java.util.*
 
 class AddUserActivity : AppCompatActivity() {
 

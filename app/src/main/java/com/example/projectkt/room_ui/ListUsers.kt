@@ -3,13 +3,9 @@ package com.example.projectkt.room_ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ListAdapter
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.projectkt.AddUserActivity
-import com.example.projectkt.R
-import com.example.projectkt.databinding.ActivityAddBinding
 import com.example.projectkt.databinding.ActivityListUsersBinding
 import com.example.projectkt.room.RoomAdapter
 import com.example.projectkt.room.UserViewModel

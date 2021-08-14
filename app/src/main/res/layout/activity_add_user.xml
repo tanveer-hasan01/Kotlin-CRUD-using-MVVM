@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 
     android:background="#FFFFFF"
-    tools:context=".AddUserActivity">
+    tools:context=".activity.AddUserActivity">
 
 
     <LinearLayout

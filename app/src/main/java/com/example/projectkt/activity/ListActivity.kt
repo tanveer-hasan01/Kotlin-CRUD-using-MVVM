@@ -1,4 +1,4 @@
-package com.example.projectkt
+package com.example.projectkt.activity
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -8,7 +8,6 @@ import android.text.TextUtils
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
-import androidx.annotation.StringRes
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
@@ -19,6 +18,7 @@ import com.example.projectkt.Adapter.UserAdapter
 import com.example.projectkt.ModelData.ModelUser
 import com.example.projectkt.ModelData.User
 import com.example.projectkt.ModelData.UserResponse
+import com.example.projectkt.R
 import com.example.projectkt.ViewModel.ListViewModel
 import com.example.projectkt.databinding.ActivityListBinding
 import com.example.projectkt.room_ui.ListUsers
@@ -42,7 +42,7 @@ class ListActivity : AppCompatActivity(), UserAdapter.OnItemLongClickListener{
 
         val drawerLayout:DrawerLayout=findViewById(R.id.drawer_layout)
         val nevView:NavigationView=findViewById(R.id.nev_view)
-        toogle= ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close)
+        toogle= ActionBarDrawerToggle(this,drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(toogle)
         toogle.syncState()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

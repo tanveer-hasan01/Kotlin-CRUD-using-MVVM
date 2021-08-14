@@ -21,7 +21,7 @@
 
         </activity>
         <activity android:name=".UpdateActivity" />
-        <activity android:name=".ListActivity" />
+        <activity android:name=".activity.ListActivity" />
         <activity android:name=".Home">
 
             <intent-filter>
@@ -30,7 +30,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddUserActivity" />
+        <activity android:name=".activity.AddUserActivity" />
     </application>
 
 </manifest>

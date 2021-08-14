@@ -1,29 +1,14 @@
 package com.example.projectkt.Adapter
 
-import android.app.AlertDialog
-import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.Toast
-import androidx.core.app.ActivityCompat.startActivityForResult
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
-import androidx.fragment.app.ListFragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
-import com.example.projectkt.AddUserActivity
 import com.example.projectkt.ModelData.User
-import com.example.projectkt.ModelData.UserResponse
 import com.example.projectkt.R
 import com.example.projectkt.UpdateActivity
-import com.example.projectkt.ViewModel.CreateViewModel
 import kotlinx.android.synthetic.main.item_recycler_view.view.*
-import java.util.Observer
-import kotlin.coroutines.coroutineContext
 
 
 class UserAdapter(val clickLister:OnItemLongClickListener):RecyclerView.Adapter<UserAdapter.MyViewHolder>() {

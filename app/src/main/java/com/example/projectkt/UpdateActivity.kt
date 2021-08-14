@@ -3,15 +3,12 @@ package com.example.projectkt
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.projectkt.ModelData.User
-import com.example.projectkt.ModelData.UserResponse
 import com.example.projectkt.ViewModel.UpdateViewModel
-import com.example.projectkt.databinding.ActivityListBinding
+import com.example.projectkt.activity.ListActivity
 import com.example.projectkt.databinding.ActivityUpdateBinding
-import java.util.Observer
 
 class UpdateActivity : AppCompatActivity() {
 

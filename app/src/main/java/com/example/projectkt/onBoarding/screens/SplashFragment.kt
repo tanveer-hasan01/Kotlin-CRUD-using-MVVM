@@ -1,4 +1,4 @@
-package com.example.projectkt
+package com.example.projectkt.onBoarding.screens
 
 import android.content.Context
 import android.content.Intent
@@ -9,6 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.projectkt.R
+import com.example.projectkt.activity.ListActivity
 
 
 class SplashFragment : Fragment() {
