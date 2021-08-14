@@ -8,11 +8,18 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.projectkt.ModelData.User
+import com.example.projectkt.MySharedPreference
 import com.example.projectkt.R
 import com.example.projectkt.ViewModel.CreateViewModel
 import com.example.projectkt.databinding.ActivityAddUserBinding
+import dagger.android.support.DaggerAppCompatActivity
+import javax.inject.Inject
 
-class AddUserActivity : AppCompatActivity() {
+class AddUserActivity : DaggerAppCompatActivity() {
+
+
+    @Inject
+    lateinit var sharedPreference: MySharedPreference
 
     private lateinit var binding: ActivityAddUserBinding
     lateinit var viewModel: CreateViewModel

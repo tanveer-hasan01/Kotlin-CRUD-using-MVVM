@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectkt.R
-import com.example.projectkt.UpdateActivity
+import com.example.projectkt.activity.UpdateActivity
 import com.example.projectkt.room_ui.AddActivity
 import kotlinx.android.synthetic.main.item_user.view.*
 

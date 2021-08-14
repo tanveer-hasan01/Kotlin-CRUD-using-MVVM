@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectkt.ModelData.User
 import com.example.projectkt.R
-import com.example.projectkt.UpdateActivity
+import com.example.projectkt.activity.UpdateActivity
 import kotlinx.android.synthetic.main.item_recycler_view.view.*
 
 
