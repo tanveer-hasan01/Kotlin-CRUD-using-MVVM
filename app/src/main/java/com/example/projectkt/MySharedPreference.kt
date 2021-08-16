@@ -11,22 +11,14 @@ class MySharedPreference @Inject constructor(private val application :Context) {
 
    init {
 
-       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-           sharedPreferences = EncryptedSharedPreferences.create(
-               application,
-               "MySharedPref",
-               getMasterKey(),
-               EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
-               EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
-           )
+       sharedPreferences = EncryptedSharedPreferences.create(
+           application,
+           "MySharedPref",
+           getMasterKey(),
+           EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+           EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+       )
 
-       } else {
-           sharedPreferences =
-               application.getSharedPreferences(
-                   "MySharedPref",
-                   Context.MODE_PRIVATE
-               )
-       }
        val editor = sharedPreferences!!.edit()
        editor.apply()
    }
@@ -56,6 +48,15 @@ class MySharedPreference @Inject constructor(private val application :Context) {
     fun getName(): String? {
         return sharedPreferences?.getString("name", null)
     }
+
+    fun setGetStarted(status: Boolean) {
+        sharedPreferences?.edit()?.putBoolean("getStarted", status)?.apply()
+    }
+
+    fun getGetStarted(): Boolean? {
+        return sharedPreferences?.getBoolean("getStarted", false)
+    }
+
 
 
 }

@@ -9,17 +9,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.projectkt.ModelData.User
 import com.example.projectkt.MySharedPreference
+import com.example.projectkt.MySharedPreference_Factory
 import com.example.projectkt.R
 import com.example.projectkt.ViewModel.CreateViewModel
 import com.example.projectkt.databinding.ActivityAddUserBinding
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
+
 class AddUserActivity : DaggerAppCompatActivity() {
 
 
     @Inject
-    lateinit var sharedPreference: MySharedPreference
+    lateinit var sharedPreferences: MySharedPreference
 
     private lateinit var binding: ActivityAddUserBinding
     lateinit var viewModel: CreateViewModel
@@ -35,6 +37,8 @@ class AddUserActivity : DaggerAppCompatActivity() {
         initViewModel()
         createUserObservable()
         initSpinner()
+
+
 
 
 
@@ -60,28 +64,7 @@ class AddUserActivity : DaggerAppCompatActivity() {
             }
         })
 
-      /*  binding.etPassword.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(p0: Editable?) {
 
-            }
-
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-            }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-                if (p0.toString().length<8)
-                {
-                    binding.etPassword.error="Week password"
-                }else if (p0.toString().isEmpty())
-                {
-                    binding.etPassword.error = "Password required"
-                }
-
-
-            }
-        })*/
 
     }
 

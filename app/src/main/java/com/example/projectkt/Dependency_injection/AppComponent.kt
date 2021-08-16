@@ -1,4 +1,4 @@
-package com.example.projectkt
+package com.example.projectkt.Dependency_injection
 
 import android.app.Application
 import dagger.BindsInstance

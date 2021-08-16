@@ -9,11 +9,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.projectkt.MySharedPreference
 import com.example.projectkt.R
 import com.example.projectkt.activity.ListActivity
+import dagger.android.support.AndroidSupportInjection
+import javax.inject.Inject
 
 
 class SplashFragment : Fragment() {
+
+
+    @Inject
+    lateinit var sharedPreference: MySharedPreference
+
 
 
 
@@ -28,8 +36,9 @@ class SplashFragment : Fragment() {
     ): View? {
 
 
+      //  sharedPreference = MySharedPreference.getPreferencesInstance(requireActivity().applicationContext)
         Handler().postDelayed({
-            if (onBoardingFinished()) {
+            if (sharedPreference.getGetStarted()==true) {
 
                 val intent = Intent(getActivity(), ListActivity::class.java)
                 startActivity(intent)
@@ -44,9 +53,9 @@ class SplashFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_splash, container, false)
     }
 
-    private fun onBoardingFinished(): Boolean {
-        val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
-        return sharedPref.getBoolean("Finished", false)
+    override fun onAttach(context: Context) {
+        AndroidSupportInjection.inject(this)
+        super.onAttach(context)
     }
 
 

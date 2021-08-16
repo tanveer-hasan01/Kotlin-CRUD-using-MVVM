@@ -23,12 +23,12 @@ import com.example.projectkt.ViewModel.ListViewModel
 import com.example.projectkt.databinding.ActivityListBinding
 import com.example.projectkt.room_ui.ListUsers
 import com.google.android.material.navigation.NavigationView
+import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_list.*
 
 class ListActivity : AppCompatActivity(), UserAdapter.OnItemLongClickListener{
 
     lateinit var toogle: ActionBarDrawerToggle
-
     private lateinit var binding: ActivityListBinding
     lateinit var Useradapter: UserAdapter
     lateinit var viewModel:ListViewModel
